@@ -1,5 +1,3 @@
-# src/spacetime.jl
-# ==================
 # Spacetime geometry derived from Fisher information
 #
 # Minkowski spacetime η_μν = diag(-1,+1,+1,+1) is derived from
