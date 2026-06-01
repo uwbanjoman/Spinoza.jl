@@ -19,6 +19,7 @@ using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
                      bures_distance, evolve_exact, kk_hamiltonian
 
 include("spacetime.jl")
+include("smoothness.jl")
 # include("gravity.jl")       # coming: Einstein tensor, curvature
 # include("matter.jl")        # coming: KK modes, SM particles
 # include("consciousness.jl") # coming: Hoffman, Banach, qualia
@@ -33,5 +34,15 @@ export
     is_timelike,
     is_lightlike,
     is_spacelike
+ 
+    # smoothness.jl
+    is_in_D6,
+    D6_diameter,
+    D6_bures_diameter,
+    bgk_vn_rhs,
+    lipschitz_constant,
+    velocity_bound,
+    gradient_bound,
+    ns_smooth
 
 end # module Spinoza
