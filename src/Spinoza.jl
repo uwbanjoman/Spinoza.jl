@@ -20,6 +20,7 @@ using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
 
 include("spacetime.jl")
 include("smoothness.jl")
+include("gravity.jl")
 # include("gravity.jl")       # coming: Einstein tensor, curvature
 # include("matter.jl")        # coming: KK modes, SM particles
 # include("consciousness.jl") # coming: Hoffman, Banach, qualia
@@ -44,5 +45,16 @@ export
     velocity_bound,
     gradient_bound,
     ns_smooth
+ 
+    # gravity.jl
+    fisher_metric,
+    metric_field,
+    christoffel,
+    ricci_tensor,
+    ricci_scalar,
+    einstein_tensor,
+    stress_energy,
+    einstein_equation_residual,
+    gravitational_wave_metric
 
 end # module Spinoza
