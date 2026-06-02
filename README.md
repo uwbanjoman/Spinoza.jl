@@ -28,7 +28,7 @@ using QuantumFisher   # for vacuum_state, pure_state, hamiltonian_KK
 ρ̂     = vacuum_state()                          # ρ̂ = I/6
 ρ̂₀    = pure_state(ComplexF64[1,0,0,0,0,0])    # pure state |1⟩
 ρ̂_ent = pure_state(ComplexF64[1,1,0,0,0,0]/√2) # entangled state
-H_KK  = Matrix(hamiltonian_KK(6))               # KK Hamiltonian
+H_KK  = Matrix(KK_hamiltonian(6))               # KK Hamiltonian
 τ     = 0.01                                     # relaxation time
 G     = spacetime_generators()                   # [G_t, G_x, G_y, G_z]
 
