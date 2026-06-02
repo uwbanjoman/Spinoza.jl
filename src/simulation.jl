@@ -309,25 +309,3 @@ function simulate_cosmology(k_max::Int=10, n_modes::Int=100)
         note           = "n_s = $(round(n_s, digits=4)) (observed: 0.9649)"
     )
 end
-
-# ── Helper: spacetime generators ─────────────────────────────────────────────
-
-function spacetime_generators()
-    G_t = zeros(ComplexF64,6,6); G_t[5,5]= 1/√2; G_t[6,6]=-1/√2
-    G_x = zeros(ComplexF64,6,6); G_x[1,2]= 1/√2; G_x[2,1]= 1/√2
-    G_y = zeros(ComplexF64,6,6); G_y[1,2]=-1im/√2; G_y[2,1]=1im/√2
-    G_z = zeros(ComplexF64,6,6); G_z[1,1]= 1/√2; G_z[2,2]=-1/√2
-    return [G_t, G_x, G_y, G_z]
-end
-
-function minkowski_metric(ρ=vacuum_state(), cs=1.0)
-    G = spacetime_generators()
-    g = zeros(Float64,4,4)
-    for i in 1:4, j in 1:4
-        GiGj = G[i]*G[j]
-        g[i,j] = real(tr(ρ*GiGj)) -
-                 real(tr(ρ*G[i]))*real(tr(ρ*G[j]))
-    end
-    g[1,1] = -g[1,1]
-    return g * 3
-end
