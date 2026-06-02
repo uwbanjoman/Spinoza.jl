@@ -23,7 +23,7 @@
 using QuantumFisher
 using LinearAlgebra
 
-export fisher_metric, metric_field, christoffel, metric_derivatives
+export fisher_metric, metric_field, christoffel, metric_derivatives, riemann ricci_tensor, ricci_scalar, einstein_tensor, stress_energy, einstein_equation_residual, gravitational_wave_metric
 
 # ── Metric from Fisher information ────────────────────────────────────────────
 
