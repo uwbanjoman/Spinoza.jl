@@ -22,7 +22,7 @@ include("spacetime.jl")
 include("smoothness.jl")
 include("gravity.jl")
 include("matter.jl")
-# include("consciousness.jl") # coming: Hoffman, Banach, qualia
+include("consciousness.jl")
 # include("simulation.jl")    # coming: lattice, gravitational waves
 
 export
@@ -68,5 +68,16 @@ export
     cp_phase,
     cp_phase_degrees,
     sm_summary
+ 
+    # consciousness.jl
+    consciousness_measure,
+    is_conscious,
+    banach_contraction_factor,
+    self_model,
+    conscious_agent,
+    free_will,
+    now_moment,
+    qualia_space,
+    consciousness_summary
 
 end # module Spinoza
