@@ -22,35 +22,44 @@ Built on [QuantumFisher.jl](https://github.com/uwbanjoman/QuantumFisher.jl).
 
 ```julia
 using Spinoza
+using QuantumFisher   # for vacuum_state, pure_state, hamiltonian_KK
 
-# Spacetime — derived, not postulated
-η = minkowski_metric()                    # diag(-1,+1,+1,+1)
-lorentz_interval([1.0, 1.0, 0.0, 0.0])   # → 0.0  (lightlike)
+# ── Setup ──────────────────────────────────────────────────────────────────
+ρ̂     = vacuum_state()                          # ρ̂ = I/6
+ρ̂₀    = pure_state(ComplexF64[1,0,0,0,0,0])    # pure state |1⟩
+ρ̂_ent = pure_state(ComplexF64[1,1,0,0,0,0]/√2) # entangled state
+H_KK  = Matrix(hamiltonian_KK(6))               # KK Hamiltonian
+τ     = 0.01                                     # relaxation time
+G     = spacetime_generators()                   # [G_t, G_x, G_y, G_z]
 
-# Gravity — Einstein equation from Fisher information
-G = spacetime_generators()
-g = fisher_metric(ρ̂, G)                   # curved metric from ρ̂
-T = stress_energy(ρ̂, G)                   # T_μν = 𝓕_μν - (1/2)g_μν 𝓕
+# ── Spacetime ──────────────────────────────────────────────────────────────
+η = minkowski_metric()                  # 4×4, diag ≈ (-0.5,+0.5,+0.5,+0.5)
+lorentz_interval([1.0, 1.0, 0.0, 0.0]) # → 0.0  (lightlike)
 
-# Standard Model
-sm_summary()                               # gauge group, generations, θ_W
-generation_count()                         # → 3  (c₁(ℂP²) = 3)
-weinberg_angle_full()                      # → 0.232
-cp_phase_degrees()                         # → 69.09°
+# ── Gravity ────────────────────────────────────────────────────────────────
+g = fisher_metric(ρ̂, G)                # 4×4 metric tensor
+T = stress_energy(ρ̂, G)               # T_μν = 𝓕_μν - (1/2)g_μν 𝓕
 
-# Navier-Stokes smoothness
-ns_smooth(ρ̂₀, H_KK, τ)                    # → true  (via compactness of 𝒟₆)
-velocity_bound()                           # → 3√2 cs  (automatic L^∞ bound)
+# ── Standard Model ─────────────────────────────────────────────────────────
+sm_summary()                            # gauge group, generations, θ_W, δ_CP
+generation_count()                      # → 3  (c₁(ℂP²) = 3)
+weinberg_angle_full()                   # → 0.232
+cp_phase_degrees()                      # → 69.09°
 
-# Consciousness
-is_conscious(ρ̂)                           # Φ > τ² = 0.04?
-self_model(ρ̂)                             # Banach fixed point ρ̂*
-free_will(ρ̂_now, [goal1, goal2, goal3])   # argmax Φ
+# ── Navier-Stokes smoothness ───────────────────────────────────────────────
+ns_smooth(ρ̂₀, H_KK, τ)                # → true  (via compactness of 𝒟₆)
+velocity_bound()                        # → 3√2 cs  (automatic L^∞ bound)
 
-# Simulations
-simulate_cosmology().spectral_index        # → 0.964  (n_s)
-simulate_black_hole()                      # no singularity ✓
-simulate_gravitational_waves()             # quadrupole radiation
+# ── Consciousness ──────────────────────────────────────────────────────────
+consciousness_measure(ρ̂_ent)           # Φ = 𝓕_cross / 𝓕_total
+is_conscious(ρ̂_ent)                    # Φ > τ² = 0.04?
+self_model(ρ̂_ent)                      # Banach fixed point ρ̂*
+free_will(ρ̂, [ρ̂₀, ρ̂_ent])            # argmax Φ over goal states
+
+# ── Simulations ────────────────────────────────────────────────────────────
+simulate_cosmology().spectral_index     # → 0.964  (n_s)
+simulate_black_hole()                   # no singularity ✓
+simulate_gravitational_waves()          # quadrupole radiation
 ```
 
 ---
