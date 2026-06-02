@@ -23,6 +23,8 @@
 using QuantumFisher
 using LinearAlgebra
 
+export fisher_metric
+
 # ── Metric from Fisher information ────────────────────────────────────────────
 
 """
