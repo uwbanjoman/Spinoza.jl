@@ -76,9 +76,6 @@ export
     sm_summary,
  
     # consciousness.jl
-    consciousness_measure,
-    is_conscious,
-    banach_contraction_factor,
     self_model,
     conscious_agent,
     free_will,
