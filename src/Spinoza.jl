@@ -14,6 +14,7 @@ module Spinoza
 using QuantumFisher
 using LinearAlgebra
 using DifferentialEquations
+using Printf
 
 # Re-export from QuantumFisher
 using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
