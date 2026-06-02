@@ -35,7 +35,7 @@ export
     lorentz_interval,
     is_timelike,
     is_lightlike,
-    is_spacelike
+    is_spacelike,
  
     # smoothness.jl
     is_in_D6,
@@ -45,7 +45,7 @@ export
     lipschitz_constant,
     velocity_bound,
     gradient_bound,
-    ns_smooth
+    ns_smooth,
  
     # gravity.jl
     fisher_metric,
@@ -56,7 +56,7 @@ export
     einstein_tensor,
     stress_energy,
     einstein_equation_residual,
-    gravitational_wave_metric
+    gravitational_wave_metric,
  
     # matter.jl
     kk_spectrum_full,
@@ -69,7 +69,7 @@ export
     particle_mass,
     cp_phase,
     cp_phase_degrees,
-    sm_summary
+    sm_summary,
  
     # consciousness.jl
     consciousness_measure,
@@ -80,7 +80,7 @@ export
     free_will,
     now_moment,
     qualia_space,
-    consciousness_summary
+    consciousness_summary,
  
     # simulation.jl
     simulate_1d,
