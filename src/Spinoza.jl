@@ -13,6 +13,7 @@ module Spinoza
 
 using QuantumFisher
 using LinearAlgebra
+using DifferentialEquations
 
 # Re-export from QuantumFisher
 using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
@@ -23,7 +24,7 @@ include("smoothness.jl")
 include("gravity.jl")
 include("matter.jl")
 include("consciousness.jl")
-# include("simulation.jl")    # coming: lattice, gravitational waves
+include("simulation.jl")
 
 export
     # spacetime.jl
@@ -79,5 +80,13 @@ export
     now_moment,
     qualia_space,
     consciousness_summary
+ 
+    # simulation.jl
+    simulate_1d,
+    simulate_berry,
+    simulate_3d,
+    simulate_gravitational_waves,
+    simulate_black_hole,
+    simulate_cosmology
 
 end # module Spinoza
