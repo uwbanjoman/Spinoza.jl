@@ -12,6 +12,7 @@
 module Spinoza
 
 using QuantumFisher
+using QuantumFisher: is_conscious
 using LinearAlgebra
 using DifferentialEquations
 using Printf
