@@ -37,7 +37,7 @@ Returns:
 - `fisher_field`: 𝓕[ρ̂(x,t)] at each time and position
 """
 function simulate_1d(T::Real=1.0, Nx::Int=32, dt::Real=0.01)
-    H_KK = Matrix(hamiltonian_KK(6))
+    H_KK = Matrix(kk_hamiltonian(6))
     xs   = range(0, 2π, length=Nx)
     G    = spacetime_generators()
 
@@ -125,7 +125,7 @@ Returns:
 - `fisher_max`: maximum Fisher information over the lattice vs time
 """
 function simulate_3d(N::Int=8, T::Real=0.5)
-    H_KK = Matrix(hamiltonian_KK(6))
+    H_KK = Matrix(kk_hamiltonian(6))
     G    = spacetime_generators()
 
     # Initial state: Gaussian perturbation at center
@@ -183,7 +183,7 @@ Returns:
 - `fisher_total`: total Fisher information vs time
 """
 function simulate_gravitational_waves(T::Real=10.0, n_steps::Int=200)
-    H_KK = Matrix(hamiltonian_KK(6))
+    H_KK = Matrix(kk_hamiltonian(6))
     G    = spacetime_generators()
 
     # Binary system: two orthogonal pure states
