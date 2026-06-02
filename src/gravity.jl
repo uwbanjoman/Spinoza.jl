@@ -23,7 +23,7 @@
 using QuantumFisher
 using LinearAlgebra
 
-export fisher_metric
+export fisher_metric, metric_field, christoffel, metric_derivatives
 
 # ── Metric from Fisher information ────────────────────────────────────────────
 
