@@ -17,8 +17,12 @@ using DifferentialEquations
 using Printf
 
 # Re-export from QuantumFisher
-using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
-                     bures_distance, evolve_exact, kk_hamiltonian
+export vacuum_state, pure_state, mixed_state,
+       von_neumann_entropy, purity,
+       bures_distance, bures_fidelity, bures_geodesic,
+       kk_hamiltonian, evolve_exact, informative_velocity,
+       fisher_tensor, fisher_scalar,
+       consciousness_measure, is_conscious, banach_contraction_factor
 
 include("spacetime.jl")
 include("smoothness.jl")
