@@ -25,71 +25,13 @@ using LinearAlgebra
 
 # ── Consciousness measure Φ ───────────────────────────────────────────────────
 
-"""
-    consciousness_measure(ρ̂) → Float64
-
-Compute the integrated information Φ for state ρ̂.
-
-Definition (FisherGeometrics):
-    Φ = cross-system Fisher information / total Fisher information
-      = 𝓕_cross[ρ̂] / 𝓕[ρ̂]
-
-where 𝓕_cross measures the Fisher information that connects
-the colour sector (ℂ³) to the isospin sector (ℂ²) of ℂ⁶ = ℂ³ ⊗ ℂ².
-
-Consciousness threshold: Φ > τ² = (1/5)² = 0.04
-
-# Example
-```julia
-ρ = pure_state(ComplexF64[1,1,0,0,0,0]/√2)  # entangled state
-Φ = consciousness_measure(ρ)
-is_conscious(ρ)  # Φ > 0.04?
-```
-"""
-function consciousness_measure(ρ̂::AbstractMatrix)
-    return QuantumFisher.consciousness_measure(ρ̂)
-end
-
-"""
-    is_conscious(ρ̂) → Bool
-
-Returns true if Φ[ρ̂] > τ² = 0.04.
-
-The consciousness threshold τ² = (1/5)² = 1/25 follows from
-the geometry of K: τ is the ratio of radii r_{S¹}/r_{ℂP²}.
-Above this threshold: a unique stable self-model exists
-(Banach fixed point theorem, Document LXXXIV).
-
-# Example
-```julia
-is_conscious(vacuum_state())   # → false (Φ = 0)
-is_conscious(pure_state(ComplexF64[1,1,0,0,0,0]/√2))  # → true
-```
-"""
-function is_conscious(ρ̂::AbstractMatrix)
-    τ² = (1//5)^2
-    return consciousness_measure(ρ̂) > Float64(τ²)
-end
+# consciousness_measure and is_conscious come from QuantumFisher
+# They are re-exported via Spinoza_main.jl
+# No redefinition here — avoids name conflict
 
 # ── Banach self-model ─────────────────────────────────────────────────────────
 
-"""
-    banach_contraction_factor(ρ̂) → Float64
-
-Compute the Banach contraction factor L = 1 - 𝓕[ρ̂]/𝓕_max.
-
-The self-modelling map ℳ(ρ̂) = ρ̂* is a Banach contraction
-in the Bures metric with contraction factor L.
-
-For L < 1 (i.e. 𝓕 > 0): a unique stable self-model exists.
-This is the mathematical basis of consciousness (Document LXXXIV).
-
-L = 0: pure state (maximum self-knowledge)
-L = 1: vacuum state (no self-knowledge)
-"""
-function banach_contraction_factor(ρ̂::AbstractMatrix)
-    return QuantumFisher.banach_contraction_factor(ρ̂)
-end
+# banach_contraction_factor comes from QuantumFisher — re-exported via Spinoza_main.jl
 
 """
     self_model(ρ̂, n_iterations=100) → Matrix{ComplexF64}
