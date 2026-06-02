@@ -21,8 +21,7 @@ using QuantumFisher: density_matrix, vacuum_state, fisher_tensor,
 include("spacetime.jl")
 include("smoothness.jl")
 include("gravity.jl")
-# include("gravity.jl")       # coming: Einstein tensor, curvature
-# include("matter.jl")        # coming: KK modes, SM particles
+include("matter.jl")
 # include("consciousness.jl") # coming: Hoffman, Banach, qualia
 # include("simulation.jl")    # coming: lattice, gravitational waves
 
@@ -56,5 +55,18 @@ export
     stress_energy,
     einstein_equation_residual,
     gravitational_wave_metric
+ 
+    # matter.jl
+    kk_spectrum_full,
+    gauge_bosons,
+    fermion_content,
+    hypercharges,
+    weinberg_angle,
+    weinberg_angle_full,
+    generation_count,
+    particle_mass,
+    cp_phase,
+    cp_phase_degrees,
+    sm_summary
 
 end # module Spinoza
