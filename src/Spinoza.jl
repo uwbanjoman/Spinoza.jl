@@ -29,6 +29,7 @@ include("smoothness.jl")
 include("gravity.jl")
 include("matter.jl")
 include("consciousness.jl")
+include("higgs.jl")
 include("simulation.jl")
 
 export
@@ -82,6 +83,9 @@ export
     now_moment,
     qualia_space,
     consciousness_summary,
+
+    # higgs.jl
+    M_10D_planck,
  
     # simulation.jl
     simulate_1d,
