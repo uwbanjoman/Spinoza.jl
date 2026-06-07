@@ -92,6 +92,7 @@ export
     higgs_direction,
     tensor_hessian_mass,
     tensor_hessian_eigenvalues,
+    higgs_mass,
  
     # simulation.jl
     simulate_1d,
