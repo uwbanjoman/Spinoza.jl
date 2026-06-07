@@ -30,6 +30,7 @@
 # © 2026 Jan Bouwman — MIT License
 
 using LinearAlgebra
+using Statistics
 using Printf
 
 # ── Constants ─────────────────────────────────────────────────────
