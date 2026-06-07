@@ -94,6 +94,7 @@ export
     tensor_hessian_eigenvalues,
     higgs_mass,
     higgs_mass_default,
+    yukawa_matrix,
  
     # simulation.jl
     simulate_1d,
