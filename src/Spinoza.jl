@@ -95,6 +95,8 @@ export
     higgs_mass,
     higgs_mass_default,
     yukawa_matrix,
+    quark_mass_ratios,
+    higgs_summary,
  
     # simulation.jl
     simulate_1d,
