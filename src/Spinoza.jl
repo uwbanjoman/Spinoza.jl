@@ -90,6 +90,7 @@ export
     ew_vacuum,
     ew_vacuum_eigenvalues,
     higgs_direction,
+    tensor_hessian_mass
  
     # simulation.jl
     simulate_1d,
