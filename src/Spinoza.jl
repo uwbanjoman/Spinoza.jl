@@ -89,6 +89,7 @@ export
     lyapunov_higgs,
     ew_vacuum,
     ew_vacuum_eigenvalues,
+    higgs_direction,
  
     # simulation.jl
     simulate_1d,
