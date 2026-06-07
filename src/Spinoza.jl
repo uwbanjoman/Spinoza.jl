@@ -87,6 +87,7 @@ export
     # higgs.jl
     M_10D_planck,
     lyapunov_higgs,
+    ew_vacuum,
  
     # simulation.jl
     simulate_1d,
