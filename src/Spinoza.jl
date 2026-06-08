@@ -18,7 +18,7 @@ using Printf
 
 # Re-export from QuantumFisher
 export vacuum_state, pure_state, mixed_state,
-       von_neumann_entropy, purity,
+       von_neumann_rhs, von_neumann_entropy, purity,
        bures_distance, bures_fidelity, bures_geodesic,
        kk_hamiltonian, evolve_exact, informative_velocity,
        fisher_tensor, fisher_scalar,
