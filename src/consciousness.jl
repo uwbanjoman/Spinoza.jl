@@ -108,7 +108,7 @@ function free_will(
     ρ̂_current::AbstractMatrix,
     goals::Vector{<:AbstractMatrix}
 )
-    Φ_values = [consciousness_measure(conscious_agent(g, ρ̂_current)) for g in goals]
+    Φ_values = [fisher_integration(conscious_agent(g, ρ̂_current)) for g in goals]
     return argmax(Φ_values)
 end
 
