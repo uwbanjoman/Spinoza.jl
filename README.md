@@ -132,7 +132,7 @@ cp_phase_degrees()     # 69.09°  (0.15% from observed 69.2°)
 Consciousness as stable Fisher geometry (Φ > τ²):
 
 ```julia
-consciousness_measure(ρ̂)   # Φ = 𝓕_cross / 𝓕_total
+fisher_integration(ρ̂)   # Φ = 𝓕_cross / 𝓕_total
 is_conscious(ρ̂)             # Φ > (1/5)² = 0.04?
 self_model(ρ̂)               # Banach fixed point (unique stable self-model)
 now_moment(ρ̂, H_KK)        # minimum perceptual time
