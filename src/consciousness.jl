@@ -170,7 +170,6 @@ function qualia_space(n_samples::Int=100)
             samples_found += 1
         end
     end
-
     return result
 end
 
