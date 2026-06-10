@@ -163,7 +163,7 @@ function qualia_space(n_samples::Int=100)
         ρ = A * A'
         ρ = ρ / tr(ρ)
 
-        Φ = [fisher_integration(ρ)
+        Φ = fisher_integration(ρ)
         if Φ > τ²
             S = von_neumann_entropy(ρ)
             result = vcat(result, [Φ S])
@@ -182,7 +182,7 @@ Print a summary of the consciousness properties of state ρ̂.
 """
 function consciousness_summary(ρ̂::AbstractMatrix)
     τ² = Float64((1//5)^2)
-    Φ  = [fisher_integration(ρ̂)
+    Φ  = fisher_integration(ρ̂)
     L  = banach_contraction_factor(ρ̂)
     S  = von_neumann_entropy(ρ̂)
     P  = purity(ρ̂)
