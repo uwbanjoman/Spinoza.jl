@@ -51,7 +51,7 @@ ns_smooth(ρ̂₀, H_KK, τ)                # → true  (via compactness of 𝒟
 velocity_bound()                        # → 3√2 cs  (automatic L^∞ bound)
 
 # ── Consciousness ──────────────────────────────────────────────────────────
-consciousness_measure(ρ̂_ent)           # Φ = 𝓕_cross / 𝓕_total
+fisher_integration(ρ̂_ent)           # Φ = 𝓕_cross / 𝓕_total
 is_conscious(ρ̂_ent)                    # Φ > τ² = 0.04?
 self_model(ρ̂_ent)                      # Banach fixed point ρ̂*
 free_will(ρ̂, [ρ̂₀, ρ̂_ent])            # argmax Φ over goal states
